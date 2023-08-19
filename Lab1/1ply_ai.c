@@ -102,14 +102,14 @@ int main() {
     }
     switch(win(board)) {
         case 0:
-            printf("A draw. How droll.\n");
+            printf("Game Draw.\n");
             break;
         case 1:
             draw(board);
             printf("You lose.\n");
             break;
         case -1:
-            printf("You win. Inconceivable!\n");
+            printf("You win.\n");
             break;
     }
 }
