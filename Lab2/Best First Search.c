@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int INT_MAX = 2147483647;
+int int_max = 2147483647;
 int min(int a, int b)
 {
     if (a > b)
@@ -11,7 +11,7 @@ int min(int a, int b)
 int rows, columns;
 int *minimum(int openlist[rows][columns], int n, int m)
 {
-    int Min = INT_MAX;
+    int Min = int_max;
     int r = 0, c = 0;
     for (int i = 0; i < rows; i++)
     {
@@ -44,10 +44,10 @@ int abs(int i)
 int main()
 {
     int i, j;
-    printf("Enter No. of rows : ");
+    printf("No. of rows : ");
     scanf("%d", &rows);
 
-    printf("Enter No. of columns : ");
+    printf("No. of columns : ");
     scanf("%d", &columns);
 
     int maze[rows][columns];
@@ -99,7 +99,7 @@ int main()
         printf("\n");
         for (j = 0; j < columns; j++)
         {
-            openlist[i][j] = INT_MAX;
+            openlist[i][j] = int_max;
             closedlist[i][j] = 0;
             printf("%d | ", maze[i][j]);
         }
@@ -124,7 +124,7 @@ int main()
             printf("Cordinates Found!!");
             return 0;
         }
-        openlist[r][c] = INT_MAX;
+        openlist[r][c] = int_max;
         closedlist[r][c] = 1;
         for (int i = 0; i < 4; i++)
         {

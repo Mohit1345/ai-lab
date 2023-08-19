@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define INT_MAX 2147483647
+#define int_max 2147483647
 
 int min(int a, int b) {
     return (a < b) ? a : b;
@@ -10,7 +10,7 @@ int min(int a, int b) {
 int rows, columns;
 
 int* minimum(int openlist[rows][columns], int closedlist[rows][columns], int maze[rows][columns]) {
-    int Min = INT_MAX;
+    int Min = int_max;
     int r = -1, c = -1;
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < columns; j++) {
@@ -34,10 +34,10 @@ int abs(int i) {
 
 int main() {
     int i, j;
-    printf("Enter No. of rows: ");
+    printf("No. of rows: ");
     scanf("%d", &rows);
 
-    printf("Enter No. of columns: ");
+    printf("No. of columns: ");
     scanf("%d", &columns);
 
     int maze[rows][columns];
@@ -54,13 +54,12 @@ int main() {
     int e_col;
     scanf("%d", &e_col);
 
-    printf("Enter Heuristic Matrix (Costs to reach the destination):\n");
+    printf("Heuristic Matrix (Costs to reach the destination):\n");
     for (i = 0; i < rows; i++) {
         for (j = 0; j < columns; j++) {
             scanf("%d", &maze[i][j]);
             if (maze[i][j] == -1) {
-                // Treat -1 in the heuristic matrix as a block by setting it to INT_MAX
-                maze[i][j] = INT_MAX;
+                maze[i][j] = int_max;
             }
         }
     }
@@ -71,7 +70,7 @@ int main() {
     printf("Heuristic Matrix : \n");
     for (i = 0; i < rows; i++) {
         for (j = 0; j < columns; j++) {
-            openlist[i][j] = INT_MAX;
+            openlist[i][j] = int_max;
             closedlist[i][j] = 0;
             printf("%d | ", maze[i][j]);
         }
